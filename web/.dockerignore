@@ -4,6 +4,7 @@
 **/.classpath
 **/.dockerignore
 **/.env
+**/.env.prod
 **/.git
 **/.gitignore
 **/.project
