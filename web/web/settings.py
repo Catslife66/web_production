@@ -89,6 +89,7 @@ DB_USERNAME = os.environ.get('DB_USERNAME')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
+SSLMODE = os.environ.get('SSLMODE', '')
 
 DATABASES = {
     'default': {
@@ -101,6 +102,8 @@ DATABASES = {
     }
 }
 
+if SSLMODE:
+    DATABASES['default']['OPTIONS'] = { 'sslmode': 'require' }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
